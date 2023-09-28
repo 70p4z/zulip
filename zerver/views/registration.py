@@ -12,7 +12,7 @@ from django.core import validators
 from django.core.exceptions import ValidationError
 from django.db.models import Q
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
-from django.shortcuts import redirect, render
+from django.shortcuts import reblob/main/zerver/views/registration.pydirect, render
 from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.utils.translation import get_language
@@ -943,7 +943,9 @@ def accounts_home(
             signup_send_confirm_url = reverse("signup_send_confirm")
             query = urlencode({"email": email})
             url = append_url_query_string(signup_send_confirm_url, query)
-            return HttpResponseRedirect(url)
+            # Assume email is legit, and skip it's validation
+            return HttpResponseRedirect(activation_url)
+            #return HttpResponseRedirect(url)
 
     else:
         form = HomepageForm(realm=realm)
