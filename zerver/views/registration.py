@@ -12,7 +12,7 @@ from django.core import validators
 from django.core.exceptions import ValidationError
 from django.db.models import Q
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
-from django.shortcuts import reblob/main/zerver/views/registration.pydirect, render
+from django.shortcuts import redirect, render
 from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.utils.translation import get_language
